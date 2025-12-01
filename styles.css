@@ -1,56 +1,94 @@
 body {
-    background-color: turquoise;
-}
-
-body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-color: #40E0D0;
 }
 
-.navigationBar {
+input:focus {
+    outline: 2px solid hsla(200, 80%, 50%, 1);
+    background-color: rgba(200, 255, 255, 0.4);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background-color: hsla(160, 60%, 90%, 0.8);  /* light green tint (HSLA used!) */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+th {
+    background-color: rgba(0, 128, 128, 0.9); /* turquoise (RGBA used!) */
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+td:first-of-type {
+    font-weight: bold;
+}
+
+td:last-of-type {
+    color: darkslategray;
+}
+
+tr:hover {
+    background-color: rgba(0, 128, 128, 0.2);
+    cursor: pointer;
+}
+
+table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header .navigationBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;
-    background-color: #fff;
 }
 
 .navigationMenu {
     display: flex;
-    gap: 25px;
-    list-style: none;
+    gap: 30px;
 }
 
-.naLink {
+.navigationMenu a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
 
-.hero {
-    text-align: center;
-    padding: 40px;
-    background-color: orange;
+.navigationMenu a:hover {
     color: white;
 }
 
-.hero-section {
-    display: flex;
-    align-items: center;
-    padding: 50px;
-    gap: 40px;
+.navigationMenu a:active {
+    color: yellow;
 }
 
-.hero-details {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.navigationMenu a:visited {
+    color: purple;
 }
 
-.section {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 20px;
+.hero {
+    text-align: center;
+    background: orange;
+    padding: 20px;
+    color: white;
+}
+
+.section small:first-of-type {
+    color: gray;
+}
+
+.section h2:last-of-type {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .grid {
@@ -60,7 +98,7 @@ body {
 }
 
 .card {
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -69,54 +107,51 @@ body {
     width: 100%;
     height: 180px;
     object-fit: cover;
+    opacity: 0.8; 
+}
+
+.card img:hover {
+    opacity: 1;
 }
 
 .info {
     padding: 15px;
 }
 
-.footer {
-    background-color: #f2f2f2;
-    padding: 40px 20px;
-    margin-top: 40px;
+.hero-image {
+    float: right;
+    width: 350px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.4); /* required shadow */
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section a {
-    text-decoration: none;
-    color: black;
-}
-
-.divider {
-    margin: 20px 0;
+.hero-section::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    text-align: center;
+    width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 .input input {
-    width: 90%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 button {
-    padding: 10px 25px;
-    background-color: purple;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: purple;
     color: white;
     border-radius: 20px;
-    border: none;
 }
