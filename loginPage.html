@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A study planner website to help students stay organized and productive.">
     <title>Login Page</title>
-
-<style>
-    button{
-        background-color: purple;
-        color: white;
-        border-radius: 40px;
-    }
-
-    a{
-        color: purple;
-        
-    }
-</style>
-
 
 </head>
 <body>
    
-   <div class = "container">
-    
-        <h1> SIGN UP</h1>
+<header>
+    <nav class="navigationBar">
+        <a href="homePage.html" class="navLogo">
+            <h2 class="logo text">📅 Poppy</h2>
+        </a>
+        <ul class="navigationMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About us</a></li>
+            <li><a href="loginPage.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <div class="input">
+<div class="container">
 
-            <input type="email" placeholder="Email address">
-            <button>Start Trial</button>
+    <h1>SIGN UP</h1>
 
-        </div>
+    <div class="input">
+        <input id="emailInput" type="email" placeholder="Email address">
+        <p id="notification"></p>
+        <button>Start Trial</button>
+    </div>
 
-        <p class="login">Already have an account? <a href="#">Log in.</a></p>
+    <p class="login">Already have an account? <a href="#">Log in.</a></p>
 
-        <p class="message">14-day free trial. <br>
-            No credit card required.</p>
-
-
-
-
-
-
-
+    <p class="message">
+        14-day free trial. <br>No credit card required.
+    </p>
 
 </div>
-   
+
+<script>
+    const emailInfo = document.getElementById("emailInput");
+    const notification = document.getElementById("notification");
+
+    emailInfo.addEventListener("input", () => {
+        if (!emailInfo.value.includes("@")) {
+            notification.textContent = "You need to include an @ in the email.";
+        } else {
+            notification.textContent = "";
+        }
+    });
+</script>
+
 </body>
 </html>
